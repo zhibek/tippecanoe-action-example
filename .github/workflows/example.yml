@@ -13,7 +13,6 @@ jobs:
       run: |-
         git clone https://github.com/felt/tippecanoe.git /tmp/tippecanoe --depth 1
         cd /tmp/tippecanoe
-        make && make install
+        sudo make && sudo make install
         echo $PATH
-        cp ./tippecanoe /bin/tippecanoe
         which tippecanoe
