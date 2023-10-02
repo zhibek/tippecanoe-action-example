@@ -9,6 +9,13 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
+    - name: Cache Tippecanoe
+      uses: actions/cache@v2
+      with:
+        path: /usr/local/bin/tippecano*
+        key: data-${{ runner.os }}-tippecanoe
+        restore-keys: |
+          data-${{ runner.os }}-tippecanoe
     - name: Install Tippecanoe
       run: |-
         git clone https://github.com/felt/tippecanoe.git /tmp/tippecanoe --depth 1
