@@ -14,5 +14,5 @@ jobs:
         git clone https://github.com/felt/tippecanoe.git /tmp/tippecanoe --depth 1
         cd /tmp/tippecanoe
         sudo make && sudo make install
-        echo $PATH
-        which tippecanoe
+        cd -
+        tippecanoe --version
