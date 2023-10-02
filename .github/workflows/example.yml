@@ -20,7 +20,7 @@ jobs:
 
     - name: Install Tippecanoe
       run: |-
-        if ! command -v tippecanoeX &> /dev/null
+        if ! command -v tippecanoe &> /dev/null
         then
             echo "tippecanoe could not be found, installing..."
             git clone https://github.com/felt/tippecanoe.git /tmp/tippecanoe --depth 1
