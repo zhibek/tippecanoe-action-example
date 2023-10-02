@@ -2,8 +2,6 @@ name: example
 
 on:
   push:
-    branches:
-      - main
 
 jobs:
   main:
@@ -11,3 +9,11 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
+    - name: Install Tippecanoe
+      run: |-
+        git clone https://github.com/felt/tippecanoe.git /tmp/tippecanoe --depth 1
+        cd /tmp/tippecanoe
+        make && make install
+        echo $PATH
+        cp ./tippecanoe /bin/tippecanoe
+        which tippecanoe
